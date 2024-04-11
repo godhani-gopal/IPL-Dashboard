@@ -5,7 +5,7 @@ import "./MatchSmallCard.scss";
 export const MatchSmallCard = ({ teamName, match }) => {
   const isMatchWon = teamName === match.matchWinner;
   if (!match) return null;
-  const otherTeam = match.team1 == teamName ? match.team2 : match.team1;
+  const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
   const otherTeamRoute = `/teams/${otherTeam}`;
   return (
     <div

@@ -7,16 +7,18 @@ import { YearSelector } from "../component/YearSelector";
 export const MatchPage = () => {
   const [matches, setMatches] = useState([]);
   const { teamName, year } = useParams();
+
   useEffect(() => {
     const fetchMatches = async () => {
       const response = await fetch(
-        `http://localhost:8080/team/${teamName}/matches?year=${year}`
+        `${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}/matches?year=${year}`
       );
       const data = await response.json();
       setMatches(data);
       console.log(matches);
     };
     fetchMatches();
+    //eslint-disable-next-line
   }, [teamName, year]);
   return (
     <div className="MatchPage">
@@ -29,7 +31,7 @@ export const MatchPage = () => {
           {teamName} matches in {year}
         </h1>
         {matches.map((match) => (
-          <MatchDetailCard teamName={teamName} match={match} />
+          <MatchDetailCard key={match.id} teamName={teamName} match={match} />
         ))}
       </div>
     </div>
