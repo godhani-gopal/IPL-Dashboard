@@ -10,4 +10,3 @@ public class IplDashboardApplication {
 		SpringApplication.run(IplDashboardApplication.class, args);
 	}
 }
- 

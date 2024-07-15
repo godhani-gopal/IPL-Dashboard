@@ -3,6 +3,7 @@ import { MatchDetailCard } from "../component/MatchDetailCard";
 import { useParams } from "react-router-dom";
 import "./MatchPage.scss";
 import { YearSelector } from "../component/YearSelector";
+import Navbar from "../component/Navbar";
 
 export const MatchPage = () => {
   const [matches, setMatches] = useState([]);
@@ -34,6 +35,7 @@ export const MatchPage = () => {
           <MatchDetailCard key={match.id} teamName={teamName} match={match} />
         ))}
       </div>
+      <Navbar />
     </div>
   );
 };

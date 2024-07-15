@@ -26,9 +26,14 @@
         text-align: center;
     }
 
-    .more-link{
+    .more-link {
         align-self: center;
         justify-self: center;
         font-size: 2rem;
+        color: rgb(255, 255, 255);
+    }
+
+    .outside-fonts {
+        color: black;
     }
 }

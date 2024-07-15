@@ -4,6 +4,7 @@ import { MatchDetailCard } from "../component/MatchDetailCard";
 import { Link, useParams } from "react-router-dom";
 import "./TeamPage.scss";
 import { PieChart } from "react-minimal-pie-chart";
+import Navbar from "../component/Navbar";
 export const TeamPage = () => {
   const [team, setTeam] = useState({ matches: [] });
   const { teamName } = useParams();
@@ -25,23 +26,23 @@ export const TeamPage = () => {
   return (
     <div className="TeamPage">
       <div className="team-name-section">
-        <h1 className="team-name">{team.teamName}</h1>
+        <h1 className="team-name outside-fonts">{team.teamName}</h1>
       </div>
       <div className="win-loss-section">
-        <h3>Wins / Losses</h3>
+        <h3 className="outside-fonts">Wins / Losses</h3>
         <PieChart
           data={[
-            { title: "Wins", value: team.totalWins, color: "rgb(99, 162, 99)" },
+            { title: "Wins", value: team.totalWins, color: "#27b21f" },
             {
               title: "Lossses",
               value: team.totalMatches - team.totalWins,
-              color: "rgb(178, 99, 99)",
+              color: "#fe3c3c",
             },
           ]}
         ></PieChart>
       </div>
       <div className="match-detail-section">
-        <h3>Latest Matches</h3>
+        <h3 className="outside-fonts">Latest Matches</h3>
         <MatchDetailCard
           teamName={team.teamName}
           match={team.matches[0]}
@@ -53,12 +54,13 @@ export const TeamPage = () => {
       ))}
 
       <div className="more-link">
-        <Link
+        <Link className="outside-fonts"
           to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}
         >
           More ＞
         </Link>
       </div>
+      <Navbar />
     </div>
   );
 };

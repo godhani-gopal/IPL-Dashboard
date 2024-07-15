@@ -6,9 +6,14 @@
     .year-selector {
         justify-self: end;
         padding: 20px;
+
+        a, h3 {
+            color: black;
+        }
     }
 
-    .page-heading{
+    .page-heading {
         margin: 20px;
+        color: #000;
     }
 }

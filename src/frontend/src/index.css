@@ -5,9 +5,15 @@
   font-family: "cabin";
 }
 
+.navbar .navbar-icon,
+.navbar .navbar-text {
+  color: #000000;
+}
+
 a {
   text-decoration: none;
-  color: lightgray;
+  color: rgb(255, 255, 255);
+  font-style: italic;
 }
 
 body {
@@ -17,8 +23,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #23262a;
-  color: white;
+  background-color: #ffffff;
   max-width: 1100px;
   margin: 0 auto;
 }
