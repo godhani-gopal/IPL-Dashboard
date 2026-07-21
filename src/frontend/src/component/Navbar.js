@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   const handlePortfolioClick = () => {
-    window.location.href = "http://portfolio.godhanigopal.com";
+    window.location.href = "http://gopalgodhani.com";
   };
 
   return (
